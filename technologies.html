@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html
+  lang="tr"
+  x-data="{ loading: true }"
+  @load.window="setTimeout(() => loading = false, 2000)"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PikselMutfak. Lezzetli Piksel Tarifleri</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .moving-img {
+        position: relative;
+        animation: moveUpDown 3s ease-in-out infinite;
+      }
+
+      @keyframes moveUpDown {
+        0%,
+        100% {
+          left: 0;
+        }
+        50% {
+          left: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 cursor-custom"
+    x-data="{ loading: true }"
+    @load.window="setTimeout(() => loading = false, 2000)"
+  >
+    <!-- Loading Screen -->
+    <div
+      x-show="loading"
+      class="fixed inset-0 flex items-center justify-center bg-slate-800 z-50 is-loading"
+    >
+      <p
+        id="container"
+        class="text-center font-semibold text-3xl text-slate-100"
+      ></p>
+    </div>
+
+    <!-- Page:Header -->
+    <div id="header"></div>
+
+    <section class="w-full bg-white">
+      <div
+        class="px-10 pt-16 pb-16 ml-auto mr-auto max-w-7xl md:px-24 lg:px-12 lg:py-20"
+      >
+        <div class="grid gap-5 lg:grid-cols-2">
+          <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+            <div
+              class="flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500"
+            >
+              <svg
+                class="w-10 h-10 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                ></path>
+              </svg>
+            </div>
+
+            <div class="max-w-xl mb-6">
+              <div class="mb-6">
+                <p
+                  class="inline font-sans text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl sm:leading-none"
+                >
+                  Özenle tasarlayıp
+                </p>
+                <p
+                  class="block font-sans text-5xl font-bold tracking-tight text-blue-700 sm:text-6xl sm:leading-none"
+                >
+                  aşkla kodluyoruz.
+                </p>
+              </div>
+              <p class="text-base text-gray-700 md:text-lg">
+                Her projemizde, tasarımın inceliklerini ve kodlamanın gücünü bir
+                araya getiriyoruz. Detaylara gösterdiğimiz özen ve işimize
+                duyduğumuz tutku ile her adımı titizlikle planlayıp hayata
+                geçiriyoruz.
+              </p>
+            </div>
+
+            <div class="max-w-xl mb-6">
+              <p class="relative">
+                <a
+                  href="contact"
+                  class="inline-flex flex-col items-center font-semibold text-blue-700 transition-colors duration-200 cursor-pointer group"
+                >
+                  <span class="flex items-center w-full">
+                    <span>Kurumsal İletişim</span>
+                    <svg
+                      class="inline-block w-3 ml-2"
+                      fill="currentColor"
+                      viewBox="0 0 12 12"
+                    >
+                      <path
+                        d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span
+                    class="w-full h-0.5 translate-y-2 group-hover:translate-y-1 duration-200 ease-out transition opacity-0 group-hover:opacity-100 block bg-blue-600"
+                  ></span>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex justify-center w-full lg:items-center">
+            <div class="flex flex-col items-end pr-3">
+              <img
+                src="uploads/content/tech-001.jpg"
+                class="object-cover w-full h-full mb-6"
+              />
+
+              <img
+                src="uploads/content/tech-004.jpg"
+                class="object-cover w-full h-full"
+              />
+            </div>
+
+            <div class="pl-3">
+              <img
+                src="uploads/content/tech-002.jpg"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page:Footer -->
+    <div id="footer"></div>
+
+    <!-- GSAP ve ScrollTrigger Kütüphanesi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

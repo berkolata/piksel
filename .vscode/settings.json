@@ -1,0 +1,12 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "notebook.formatOnCellExecution": true,
+    "notebook.formatOnSave.enabled": true,
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

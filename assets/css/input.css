@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  transition: all 0.4s ease-in-out;
+}
+a:hover {
+  @apply cursor-hover;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.dosis {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu-item {
+  position: relative;
+}
+
+.underline {
+  position: absolute;
+  bottom: -5px; /* Çizginin konumunu ayarla */
+  left: 0;
+  width: 100%; /* Başlangıçta 0 genişlikte olacak */
+  height: 4px; /* Çizginin yüksekliği */
+  background-color: #4f46e5; /* Çizgi rengi */
+  transform: scaleX(0); /* Başlangıçta görünmez */
+  transform-origin: left; /* Sol kenardan büyüyecek şekilde ayarladık */
+  transition: transform 0.3s ease; /* Geçiş süresi */
+  border-radius: 3px;
+}
+
+.menu-item:hover .underline {
+  transform: scaleX(1); /* Üzerine gelindiğinde genişleyecek */
+}
+.menu-item.active .underline {
+  transform: scaleX(1); /* Üzerine gelindiğinde genişleyecek */
+}
+
+@keyframes fadeOut {
+  0% {
+    height: 100vh;
+    transition: all 1s ease-in-out;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+  }
+}
+.is-loading .loader__content,
+.is-loading .loader {
+  animation: fadeOut 0.5s forwards; /* Efekt süresi ve yönü */
+}
+
+/* section-animate */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px -50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px -50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px -50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px -50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+.animated-bg {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC")
+    repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 1.292s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 1.292s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 1.292s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 1.292s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+/* CIRCLE-ANIMATION */
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin3D {
+  from {
+    transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+  }
+  to {
+    transform: rotate3d(0deg);
+  }
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-135deg);
+  }
+  75% {
+    transform: rotate(-225deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+}
+
+/* SPINNING CIRCLE */
+
+.leo-border-1 {
+  position: absolute;
+  right: 20px;
+  width: 300px;
+  height: 300px;
+  opacity: 0.55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63, 249, 220);
+  background: linear-gradient(
+    0deg,
+    rgba(63, 249, 220, 0.1) 33%,
+    rgba(63, 249, 220, 1) 100%
+  );
+  animation: spin3D 1.8s linear 0s infinite;
+}
+
+.leo-core-1 {
+  width: 100%;
+  height: 100%;
+  background-color: #37474faa;
+  border-radius: 50%;
+}
+
+.leo-border-2 {
+  position: absolute;
+  right: 20px;
+  width: 300px;
+  height: 300px;
+  opacity: 0.55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(251, 91, 83);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 91, 83, 0.1) 33%,
+    rgba(251, 91, 83, 1) 100%
+  );
+  animation: spin3D 2.2s linear 0s infinite;
+}
+
+.leo-core-2 {
+  width: 100%;
+  height: 100%;
+  background-color: #1d2630aa;
+  border-radius: 50%;
+}

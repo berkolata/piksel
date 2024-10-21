@@ -1,2 +1,7 @@
 # piksel
- piksel-mutfak
+
+piksel-mutfak
+
+# first:
+
+npm install

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html
+  lang="tr"
+  x-data="{ loading: true }"
+  @load.window="setTimeout(() => loading = false, 2000)"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PikselMutfak. Lezzetli Piksel Tarifleri</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .moving-img {
+        position: relative;
+        animation: moveUpDown 3s ease-in-out infinite;
+      }
+
+      @keyframes moveUpDown {
+        0%,
+        100% {
+          left: 0;
+        }
+        50% {
+          left: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 cursor-custom"
+    x-data="{ loading: true }"
+    @load.window="setTimeout(() => loading = false, 2000)"
+  >
+    <!-- Loading Screen -->
+    <div
+      x-show="loading"
+      class="fixed inset-0 flex items-center justify-center bg-slate-800 z-50 is-loading"
+    >
+      <p
+        id="container"
+        class="text-center font-semibold text-3xl text-slate-100"
+      ></p>
+    </div>
+
+    <!-- Page:Header -->
+    <div id="header"></div>
+
+    <main
+      class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased"
+    >
+      <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
+        <article
+          class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert"
+        >
+          <header class="mb-4 lg:mb-6 not-format">
+            <address class="flex items-center mb-6 not-italic">
+              <div
+                class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"
+              >
+                <img
+                  class="mr-4 w-16 h-16 rounded-full"
+                  src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                  alt="Jese Leos"
+                />
+                <div>
+                  <a
+                    href="#"
+                    rel="author"
+                    class="text-xl font-bold text-gray-900 dark:text-white"
+                    >Kerim Murat Erdoğan</a
+                  >
+                  <p class="text-base text-gray-500 dark:text-gray-400">
+                    İçerik Yazarı @Pixel
+                  </p>
+                  <p class="text-base text-gray-500 dark:text-gray-400">
+                    <time
+                      pubdate
+                      datetime="2022-02-08"
+                      title="February 8th, 2022"
+                      >23 Ekim 2024 Cuma</time
+                    >
+                  </p>
+                </div>
+              </div>
+            </address>
+            <h1
+              class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white"
+            >
+              Best practices for successful prototypes
+            </h1>
+          </header>
+          <p class="lead">
+            Flowbite is an open-source library of UI components built with the
+            utility-first classes from Tailwind CSS. It also includes
+            interactive elements such as dropdowns, modals, datepickers.
+          </p>
+          <p>
+            Before going digital, you might benefit from scribbling down some
+            ideas in a sketchbook. This way, you can think things through before
+            committing to an actual design project.
+          </p>
+          <p>
+            It comes with the most commonly used UI components, such as buttons,
+            navigation bars, cards, form elements, and more which are
+            conveniently built with the utility classes from Tailwind CSS.
+          </p>
+          <figure>
+            <img src="uploads/content/root-img5-2448x924.png" alt="" />
+            <figcaption>Digital art by Anonymous</figcaption>
+          </figure>
+          <h2 class="my-3 text-4xl font-bold">Getting started with Flowbite</h2>
+          <p>
+            First of all you need to understand how Flowbite works. This library
+            is not another framework. Rather, it is a set of components based on
+            Tailwind CSS that you can just copy-paste from the documentation.
+          </p>
+          <p>
+            It also includes a JavaScript file that enables interactive
+            components, such as modals, dropdowns, and datepickers which you can
+            optionally include into your project via CDN or NPM.
+          </p>
+          <p>
+            You can check out the to explore the elements by including the CDN
+            files into your project. But if you want to build a project with
+            Flowbite I recommend you to follow the build tools steps so that you
+            can purge and minify the generated CSS.
+          </p>
+          <p>
+            You'll also receive a lot of useful application UI, marketing UI,
+            and e-commerce pages that can help you get started with your
+            projects even faster. You can check out this to better understand
+            the differences between the open-source and pro version of Flowbite.
+          </p>
+          <h2 class="my-3 text-4xl font-bold">
+            When does design come in handy?
+          </h2>
+          <p>
+            While it might seem like extra work at a first glance, here are some
+            key moments in which prototyping will come in handy:
+          </p>
+          <ol>
+            <li>
+              <strong>Usability testing</strong>. Does your user know how to
+              exit out of screens? Can they follow your intended user journey
+              and buy something from the site you’ve designed? By running a
+              usability test, you’ll be able to see how users will interact with
+              your design once it’s live;
+            </li>
+            <li>
+              <strong>Involving stakeholders</strong>. Need to check if your
+              GDPR consent boxes are displaying properly? Pass your prototype to
+              your data protection team and they can test it for real;
+            </li>
+            <li>
+              <strong>Impressing a client</strong>. Prototypes can help explain
+              or even sell your idea by providing your client with a hands-on
+              experience;
+            </li>
+            <li>
+              <strong>Communicating your vision</strong>. By using an
+              interactive medium to preview and test design elements, designers
+              and developers can understand each other — and the project —
+              better.
+            </li>
+          </ol>
+          <h3>Laying the groundwork for best design</h3>
+          <p>
+            Before going digital, you might benefit from scribbling down some
+            ideas in a sketchbook. This way, you can think things through before
+            committing to an actual design project.
+          </p>
+          <p>
+            Let's start by including the CSS file inside the
+            <code>head</code> tag of your HTML.
+          </p>
+          <h3>Understanding typography</h3>
+          <h4>Type properties</h4>
+          <p>
+            A typeface is a collection of letters. While each letter is unique,
+            certain shapes are shared across letters. A typeface represents
+            shared patterns across a collection of letters.
+          </p>
+          <h4>Baseline</h4>
+          <p>
+            A typeface is a collection of letters. While each letter is unique,
+            certain shapes are shared across letters. A typeface represents
+            shared patterns across a collection of letters.
+          </p>
+          <h4>Measurement from the baseline</h4>
+          <p>
+            A typeface is a collection of letters. While each letter is unique,
+            certain shapes are shared across letters. A typeface represents
+            shared patterns across a collection of letters.
+          </p>
+          <h3>Type classification</h3>
+          <h4>Serif</h4>
+          <p>
+            A serif is a small shape or projection that appears at the beginning
+            or end of a stroke on a letter. Typefaces with serifs are called
+            serif typefaces. Serif fonts are classified as one of the following:
+          </p>
+          <h4>Old-Style serifs</h4>
+          <ul>
+            <li>Low contrast between thick and thin strokes</li>
+            <li>Diagonal stress in the strokes</li>
+            <li>Slanted serifs on lower-case ascenders</li>
+          </ul>
+
+          <ol>
+            <li>Low contrast between thick and thin strokes</li>
+            <li>Diagonal stress in the strokes</li>
+            <li>Slanted serifs on lower-case ascenders</li>
+          </ol>
+          <h3>Laying the best for successful prototyping</h3>
+          <p>
+            A serif is a small shape or projection that appears at the
+            beginning:
+          </p>
+          <blockquote>
+            <p>
+              Flowbite is just awesome. It contains tons of predesigned
+              components and pages starting from login screen to complex
+              dashboard. Perfect choice for your next SaaS application.
+            </p>
+          </blockquote>
+          <h4>Code example</h4>
+          <p>
+            A serif is a small shape or projection that appears at the beginning
+            or end of a stroke on a letter. Typefaces with serifs are called
+            serif typefaces. Serif fonts are classified as one of the following:
+          </p>
+          <h4>Table example</h4>
+          <p>
+            A serif is a small shape or projection that appears at the beginning
+            or end of a stroke on a letter.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Date &amp; Time</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>United States</td>
+                <td>April 21, 2021</td>
+                <td><strong>$2,300</strong></td>
+              </tr>
+              <tr>
+                <td>Canada</td>
+                <td>May 31, 2021</td>
+                <td><strong>$300</strong></td>
+              </tr>
+              <tr>
+                <td>United Kingdom</td>
+                <td>June 3, 2021</td>
+                <td><strong>$2,500</strong></td>
+              </tr>
+              <tr>
+                <td>Australia</td>
+                <td>June 23, 2021</td>
+                <td><strong>$3,543</strong></td>
+              </tr>
+              <tr>
+                <td>Germany</td>
+                <td>July 6, 2021</td>
+                <td><strong>$99</strong></td>
+              </tr>
+              <tr>
+                <td>France</td>
+                <td>August 23, 2021</td>
+                <td><strong>$2,540</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Best practices for setting up your prototype</h3>
+          <p>
+            <strong>Low fidelity or high fidelity?</strong> Fidelity refers to
+            how close a prototype will be to the real deal. If you’re simply
+            preparing a quick visual aid for a presentation, a low-fidelity
+            prototype — like a wireframe with placeholder images and some basic
+            text — would be more than enough. But if you’re going for more
+            intricate usability testing, a high-fidelity prototype — with
+            on-brand colors, fonts and imagery — could help get more pointed
+            results.
+          </p>
+          <p>
+            <strong>Consider your user</strong>. To create an intuitive user
+            flow, try to think as your user would when interacting with your
+            product. While you can fine-tune this during beta testing,
+            considering your user’s needs and habits early on will save you time
+            by setting you on the right path.
+          </p>
+          <p>
+            <strong>Start from the inside out</strong>. A nice way to both
+            organize your tasks and create more user-friendly prototypes is by
+            building your prototypes ‘inside out’. Start by focusing on what
+            will be important to your user, like a Buy now button or an image
+            gallery, and list each element by order of priority. This way,
+            you’ll be able to create a prototype that puts your users’ needs at
+            the heart of your design.
+          </p>
+          <p>
+            And there you have it! Everything you need to design and share
+            prototypes — right in Flowbite Figma.
+          </p>
+        </article>
+      </div>
+
+      <section class="bg-white mt-14">
+        <div
+          class="px-8 py-10 mx-auto lg:max-w-screen-xl sm:max-w-xl md:max-w-full sm:px-12 md:px-3 lg:py-10 sm:py-16"
+        >
+          <h3 class="text-3xl font-bold text-blue-700 space-grotesk my-4">
+            Güncel Blog Makalelerimiz
+          </h3>
+          <div
+            class="grid gap-x-8 gap-y-12 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3"
+          >
+            <div class="relative">
+              <a
+                href="blog-details.html"
+                class="block overflow-hidden group rounded-xl"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1465310477141-6fb93167a273?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&h=1700&q=80"
+                  class="object-cover w-full h-56 transition-all duration-300 ease-out sm:h-64 group-hover:scale-110"
+                  alt=""
+                />
+              </a>
+              <div class="relative mt-5">
+                <p
+                  class="uppercase font-semibold text-xs mb-2.5 text-purple-600"
+                >
+                  23 Ekim 2024 Cuma
+                </p>
+                <a href="blog-details.html" class="block mb-3 hover:underline">
+                  <h2
+                    class="text-2xl font-bold leading-5 text-blue-600 space-grotesk"
+                  >
+                    Lorem ipsum dolor sit?
+                  </h2>
+                </a>
+                <p class="mb-4 text-gray-700 font-semibold">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  tenetur sunt nisi perferendis quae delectus ullam quos
+                  accusantium deleniti voluptatum temporibus laudantium, eaque
+                  quisquam...
+                </p>
+                <a href="blog-details.html" class="font-medium underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <div class="relative">
+              <a
+                href="blog-details.html"
+                class="block overflow-hidden group rounded-xl"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1577095972574-2fbdcf60c8ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&h=1700&q=80"
+                  class="object-cover w-full h-56 transition-all duration-300 ease-out sm:h-64 group-hover:scale-110"
+                  alt=""
+                />
+              </a>
+              <div class="relative mt-5">
+                <p
+                  class="uppercase font-semibold text-xs mb-2.5 text-purple-600"
+                >
+                  23 Ekim 2024 Cuma
+                </p>
+                <a href="blog-details.html" class="block mb-3 hover:underline">
+                  <h2
+                    class="text-2xl font-bold leading-5 text-blue-600 space-grotesk"
+                  >
+                    Lorem ipsum dolor sit?
+                  </h2>
+                </a>
+                <p class="mb-4 text-gray-700 font-semibold">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  tenetur sunt nisi perferendis quae delectus ullam quos
+                  accusantium deleniti voluptatum temporibus laudantium, eaque
+                  quisquam...
+                </p>
+                <a href="blog-details.html" class="font-medium underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <div class="relative">
+              <a
+                href="blog-details.html"
+                class="block overflow-hidden group rounded-xl"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1462651567147-aa679fd1cfaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&h=1700&q=80"
+                  class="object-cover w-full h-64 transition-all duration-300 ease-out group-hover:scale-110"
+                  alt=""
+                />
+              </a>
+              <div class="relative mt-5">
+                <p
+                  class="uppercase font-semibold text-xs mb-2.5 text-purple-600"
+                >
+                  23 Ekim 2024 Cuma
+                </p>
+                <a href="blog-details.html" class="block mb-3 hover:underline">
+                  <h2
+                    class="text-2xl font-bold leading-5 text-blue-600 space-grotesk"
+                  >
+                    Lorem ipsum dolor sit?
+                  </h2>
+                </a>
+                <p class="mb-4 text-gray-700 font-semibold">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  tenetur sunt nisi perferendis quae delectus ullam quos
+                  accusantium deleniti voluptatum temporibus laudantium, eaque
+                  quisquam...
+                </p>
+                <a href="blog-details.html" class="font-medium underline"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Page:Footer -->
+    <div id="footer"></div>
+
+    <!-- GSAP ve ScrollTrigger Kütüphanesi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

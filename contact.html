@@ -1,1 +1,358 @@
-iletişim
+<!DOCTYPE html>
+<html
+  lang="tr"
+  x-data="{ loading: true }"
+  @load.window="setTimeout(() => loading = false, 2000)"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PikselMutfak. Lezzetli Piksel Tarifleri</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .moving-img {
+        position: relative;
+        animation: moveUpDown 3s ease-in-out infinite;
+      }
+
+      @keyframes moveUpDown {
+        0%,
+        100% {
+          left: 0;
+        }
+        50% {
+          left: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 cursor-custom"
+    x-data="{ loading: true }"
+    @load.window="setTimeout(() => loading = false, 2000)"
+  >
+    <!-- Loading Screen -->
+    <div
+      x-show="loading"
+      class="fixed inset-0 flex items-center justify-center bg-slate-800 z-50 is-loading"
+    >
+      <p
+        id="container"
+        class="text-center font-semibold text-3xl text-slate-100"
+      ></p>
+    </div>
+
+    <!-- Page:Header -->
+    <div id="header"></div>
+
+    <section class="w-full bg-white pt-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div
+          class="w-full px-10 ml-auto mr-auto bg-white md:w-3/5 lg:w-4/5 xl:w-4/5"
+        >
+          <p
+            class="mb-4 text-2xl font-extrabold leading-snug tracking-tight text-left text-gray-900 md:text-4xl"
+          >
+            7 gün 24 saat, her zaman hızlı çözümler sunarız.
+          </p>
+
+          <div class="mt-8 space-y-10">
+            <div class="grid grid-cols-2 gap-4">
+              <a
+                href="tel:+905301793150"
+                class="inline-flex items-center justify-center w-full pt-3 pb-3 text-white bg-blue-500 rounded-md hover:bg-blue-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-5 mr-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M15 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V5.56l-4.72 4.72a.75.75 0 1 1-1.06-1.06l4.72-4.72h-2.69a.75.75 0 0 1-.75-.75Z"
+                    clip-rule="evenodd"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+
+                <p>Hemen Arayın</p>
+              </a>
+
+              <a
+                href="mailto:info@pikselmutfak.com"
+                class="inline-flex items-center justify-center w-full pt-3 pb-3 text-white bg-brand-color rounded-md hover:bg-red-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-5 mr-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+
+                <p>E-posta Gönderin</p>
+              </a>
+            </div>
+
+            <div class="flex items-center w-full">
+              <div
+                class="flex-1 h-0 bg-gray-200 border-t border-gray-200"
+              ></div>
+              <p
+                class="px-5 text-xs font-semibold tracking-wide text-gray-600 uppercase"
+              >
+                Mesaj Bırakın, Sizi Arayalım
+              </p>
+              <div
+                class="flex-1 h-0 bg-gray-200 border-t border-gray-200"
+              ></div>
+            </div>
+          </div>
+
+          <form class="mt-5" onsubmit="event.preventDefault();">
+            <label
+              class="text-base mb-0.5 inline-block mt-5 font-medium leading-none text-gray-700"
+              >Size nasıl hitap edebiliriz?</label
+            >
+            <input
+              type="text"
+              class="inline-block w-full px-3 py-2 border-2 rounded-md focus:outline-none focus:border-blue-500"
+              placeholder="Adınız Soyadınız"
+            />
+
+            <label
+              class="text-base mb-0.5 inline-block mt-5 font-medium leading-none text-gray-700"
+              >İletişim numaranız</label
+            >
+            <input
+              type="tel"
+              class="inline-block w-full px-3 py-2 border-2 rounded-md focus:outline-none focus:border-blue-500"
+              placeholder="+90 555 555 55 55"
+            />
+
+            <label
+              class="text-base mb-0.5 font-medium inline-block mt-5 leading-none text-gray-700"
+              >E-posta adresiniz</label
+            >
+            <input
+              type=" email"
+              class="inline-block w-full px-3 py-2 border-2 rounded-md focus:outline-none focus:border-blue-500"
+              placeholder="bilgi@kurumsal.eposta"
+            />
+
+            <label
+              class="text-base mb-0.5 font-medium inline-block mt-5 leading-none text-gray-700"
+              >Size nasıl yardımcı olabiliriz?</label
+            >
+            <textarea
+              placeholder="Mesajınızı paylaşın..."
+              class="inline-block w-full px-3 py-2 border-2 rounded-md focus:outline-none focus:border-blue-500"
+            ></textarea>
+
+            <input
+              type="submit"
+              class="w-full py-2.5 px-3 mt-5 font-medium text-white bg-blue-600 cursor-pointer hover:bg-blue-500 rounded-md component-selected"
+              value="Gönder"
+            />
+          </form>
+
+          <div class="pt-6 mt-6 border-t border-gray-200">
+            <p class="inline text-lg font-medium text-gray-700">
+              Kurumsal yazışmalarınıza özel:
+            </p>
+            <a
+              href="mailto:info@pikselmutfak.com"
+              class="inline text-lg font-medium text-blue-700 hover:text-blue-900"
+            >
+              info@pikselmutfak.com</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="relative flex flex-col justify-center px-20 pr-20 text-blue-700 xl:py-32 md:pr-24"
+        >
+          <div
+            class="absolute inset-0 w-full h-full bg-cover opacity-100"
+            style="background-image: url('uploads/content/cat-on-the-code.png')"
+          ></div>
+
+          <div class="absolute inset-0 w-full h-full bg-white opacity-80"></div>
+
+          <div
+            class="relative flex items-center justify-start text-xs font-bold text-blue-500 uppercase tacking-wide"
+          >
+            BİZ HEP BURALARDAYIZ :
+          </div>
+
+          <div class="relative flex mt-8 space-x-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="flex-none w-6 h-6 mr-2"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 6a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3V6ZM3 15.75a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2.25Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3v-2.25Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+
+            <div>
+              <p class="text-xl font-bold">İstanbul Merkezimiz</p>
+              <address
+                class="mt-1 mb-3 text-gray-800 font-semibold not-italic md:pr-20 block"
+              >
+                Acıbadem Mah. Çeçen Sok. Akasya Residence A Kule No: 25 Kat: 26
+                D:150 Üsküdar, Istanbul
+              </address>
+              <a href="#" class="font-bold mr-2 hover:underline"
+                >Adres tarifi alın</a
+              >
+              <a
+                href="tel:+90 (530) 179 31-50"
+                class="font-bold hover:underline"
+                >+90 (530) 179 31-50</a
+              >
+            </div>
+          </div>
+
+          <div class="relative flex mt-8 space-x-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="flex-none w-6 h-6 mr-2"
+            >
+              <path
+                d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z"
+              />
+            </svg>
+
+            <div>
+              <p class="text-xl font-bold">Ankara Ofisimiz</p>
+              <address
+                class="mt-1 mb-3 text-gray-800 font-semibold not-italic pr-5 md:pr-20 block"
+              >
+                Kızılırmak Mah. Dumlupınar Bulvarı Next Level No:3 A Kat:4
+                D.No:10 PK:06520 Çankaya Ankara
+              </address>
+              <a href="#" class="font-bold mr-2 hover:underline"
+                >Adres tarifi alın</a
+              >
+            </div>
+          </div>
+
+          <div class="relative flex mt-8 space-x-3">
+            <svg
+              class="flex-none w-6 h-6 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <div>
+              <p class="text-xl font-bold">Konya Teknopark</p>
+              <address
+                class="mt-1 mb-3 text-gray-800 font-semibold not-italic pr-5 md:pr-20 block"
+              >
+                Akademi Mah. Gürbulut Sokak No:67 Daire: F312 Selçuklu Konya
+              </address>
+              <a href="#" class="font-bold mr-2 hover:underline"
+                >Adres tarifi alın</a
+              >
+            </div>
+          </div>
+
+          <div class="relative flex mt-8 space-x-3">
+            <svg
+              class="flex-none w-6 h-6 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"
+              ></path>
+            </svg>
+
+            <div>
+              <p class="text-xl font-medium">Symphony Desteği</p>
+
+              <a
+                href="mailto:simphonydestek@pikselmutfak.com"
+                class="mt-1 text-blue-900 hover:underline font-semibold block mb-4"
+              >
+                simphonydestek@pikselmutfak.com
+              </a>
+
+              <a
+                href="tel:+902166062884"
+                class="inline-flex items-center justify-center font-semibold py-3 px-8 text-white bg-blue-600 rounded-md hover:bg-blue-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-5 mr-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M15 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V5.56l-4.72 4.72a.75.75 0 1 1-1.06-1.06l4.72-4.72h-2.69a.75.75 0 0 1-.75-.75Z"
+                    clip-rule="evenodd"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+
+                <p>Telefonla destek alın</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page:Footer -->
+    <div id="footer"></div>
+
+    <!-- GSAP ve ScrollTrigger Kütüphanesi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>
